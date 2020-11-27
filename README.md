@@ -71,9 +71,9 @@ npm install --save miniadd
 [lines-of-code-url]: https://badgen.net/codeclimate/loc/tom-weatherhead/miniadd
 [technical-debt-badge-image]: https://badgen.net/codeclimate/tech-debt/tom-weatherhead/miniadd
 [technical-debt-url]: https://badgen.net/codeclimate/tech-debt/tom-weatherhead/miniadd
-[maintainability-badge-image]: https://api.codeclimate.com/v1/badges/00000000000000000000/maintainability
+[maintainability-badge-image]: https://api.codeclimate.com/v1/badges/11ab76ba1b224ad1c4e0/maintainability
 [maintainability-url]: https://codeclimate.com/github/tom-weatherhead/miniadd/maintainability
-[test-coverage-badge-image]: https://api.codeclimate.com/v1/badges/00000000000000000000/test_coverage
+[test-coverage-badge-image]: https://api.codeclimate.com/v1/badges/11ab76ba1b224ad1c4e0/test_coverage
 [test-coverage-url]: https://codeclimate.com/github/tom-weatherhead/miniadd/test_coverage
 [jest-badge-image]: https://img.shields.io/badge/tested_with-jest-99424f.svg
 [jest-url]: https://github.com/facebook/jest
