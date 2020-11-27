@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"noImplicitThis": false,
+		"outDir": ".",
+		"sourceMap": false,
+		"strict": true,
+		"target": "es2015",
+		"types": [
+			"jest",
+			"node"
+		]
+	},
+	"files": [
+		"./main.ts"
+	]
+}

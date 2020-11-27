@@ -1,0 +1,117 @@
+{
+	"name": "miniadd",
+	"version": "0.0.0",
+	"description": "An example of a highly portable npm package.",
+	"keywords": [
+		"addition",
+		"example",
+		"TypeScript"
+	],
+	"private": false,
+	"homepage": "https://github.com/tom-weatherhead/miniadd#readme",
+	"repository": "github:tom-weatherhead/miniadd",
+	"bugs": {
+		"url": "https://github.com/tom-weatherhead/miniadd/issues"
+	},
+	"// browser": "",
+	"// type": "module",
+	"main": "esm/main.js",
+	"module": "esm/main.js",
+	"types": "esm/main.d.ts",
+	"files": [
+		"commonjs/**/*",
+		"esm/**/*"
+	],
+	"bin": {},
+	"man": [],
+	"directories": {
+		"lib": "",
+		"// bin": "It is an error to specify both bin and directories.bin",
+		"man": "man",
+		"// doc": "Put markdown files in the directories.doc directory",
+		"doc": "doc",
+		"example": "examples",
+		"test": "test"
+	},
+	"scripts": {
+		"all": "npm run rebuild && npm pack && npm run deploy",
+		"clean-build-products": "rm -rf commonjs && rm -rf coverage && rm -rf esm",
+		"clean-packages": "rm -rf node_modules && rm -f package-lock.json",
+		"clean": "npm run clean-build-products && npm run clean-packages",
+		"rebuild": "npm run clean && npm i && npm run build-and-test",
+		"rebuild-offline": "npm run clean-build-products && npm run build-and-test",
+		"build-and-test": "npm run prettier-check && npm run lint && npm run build && npm test",
+		"prettier-check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+		"prettier-list": "prettier --list-different \"**/*.js\" \"**/*.ts\"",
+		"prettier-format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+		"lint": "eslint src --ext .ts",
+		"build-commonjs": "tsc -p tsconfig.commonjs.json",
+		"post-build-commonjs": "cp commonjs-package.json commonjs/package.json && cp main.d.ts commonjs/",
+		"// post-build-commonjs-win": "xcopy /Q commonjs-package.json commonjs\\package.json",
+		"build-esm": "tsc -p tsconfig.esm.json",
+		"post-build-esm": "cp main.d.ts esm/",
+		"build": "npm run build-commonjs && npm run post-build-commonjs && npm run build-esm && npm run post-build-esm",
+		"test": "jest --detectOpenHandles --forceExit",
+		"deploy": "eval mv $npm_package_name-$npm_package_version.tgz $(echo $npm_package_config_deploy_target_dir)/",
+		"xxx": "tsc -p examples/typescript-commonjs/tsconfig.json",
+		"yyy": "tsc -p examples/typescript-esm/tsconfig.json",
+		"// prepare": "npm run build",
+		"prepublishOnly": "npm test && npm run lint",
+		"preversion": "npm run lint",
+		"version": "npm run format && git add -A src",
+		"postversion": "git push && git push --tags",
+		"re": "npm run prettier-format && npm run clean-build-products && npm run build-and-test && npm pack && npm run deploy",
+		"loc": "git ls-files | grep -v package-lock.json | tr -d '\\r' | tr '\\n' '\\0' | xargs -0 wc -l",
+		"f": "npm run prettier-format && npm run all",
+		"start": "npm run all"
+	},
+	"config": {
+		"deploy_target_dir": "$NPM_PKG_DIR"
+	},
+	"publishConfig": {},
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "^7.12.9",
+		"@babel/preset-env": "^7.12.7",
+		"@babel/preset-typescript": "^7.12.7",
+		"@types/eslint": "^7.2.5",
+		"@types/jest": "^26.0.15",
+		"@types/node": "^14",
+		"@typescript-eslint/eslint-plugin": "^4.8.2",
+		"@typescript-eslint/parser": "^4.8.2",
+		"eslint": "^7.14.0",
+		"esm": "^3.2.25",
+		"jest": "^26.6.3",
+		"prettier": "^2.2.0",
+		"semver": "^7.3.2",
+		"typescript": "^4.1.2"
+	},
+	"peerDependencies": {},
+	"// The correct name is bundledDependencies": true,
+	"// The name is bundleDependencies is also honoured": true,
+	"// bundledDependencies": "... is an array of package names",
+	"// bundledDependencies: See": "https://docs.npmjs.com/cli/v6/configuring-npm/package-json#bundleddependencies",
+	"bundledDependencies": [],
+	"optionalDependencies": {},
+	"engines": {
+		"node": ">= 8"
+	},
+	"os": [
+		"darwin",
+		"linux",
+		"win32"
+	],
+	"cpu": [
+		"ia32",
+		"x64"
+	],
+	"contributors": [
+		"Autonomous Weapons Systems Unlimited <killer@robots.com>",
+		"Buddy Guy <deadbeef@decafbad.gov>",
+		"Deprecated <deadc0de@obso1337.org>",
+		"Locutus <cube@cyb.org>",
+		"Sgt. Pepper <shoot1st@thinkl8r.mil>"
+	],
+	"author": "Tom Weatherhead <thaw@2hrd4u.org> (https://github.com/tom-weatherhead)",
+	"license": "MIT"
+}

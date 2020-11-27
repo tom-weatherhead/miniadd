@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+.DS_Store
+
+commonjs/
+esm/
+
+examples/typescript-commonjs/main.js
+examples/typescript-commonjs/main.d.ts
+examples/typescript-esm/main.js
+examples/typescript-esm/main.d.ts

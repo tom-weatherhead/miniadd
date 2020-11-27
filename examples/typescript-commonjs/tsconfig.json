@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"downlevelIteration": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitThis": false,
+		"outDir": ".",
+		"sourceMap": false,
+		"strict": true,
+		"target": "es5",
+		"types": [
+			"jest",
+			"node"
+		]
+	},
+	"files": [
+		"./main.ts"
+	]
+}

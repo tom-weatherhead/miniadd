@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="author" content="Tom Weatherhead" />
+        <meta name="description" content="miniadd" />
+		<meta name="keywords" content="miniadd" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>miniadd</title>
+		<base href="." /> <!-- Was "./" -->
+
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'" />
+
+		<!-- <link rel="icon" type="image/png" href="assets/favicon.png" /> -->
+	</head>
+
+	<body>
+		<script type="text/javascript" src="../../commonjs/main.js"></script>
+
+		<script type="text/javascript">
+			const a = 2, b = 3;
+
+			console.log('window.miniadd is:', typeof window.miniadd, window.miniadd);
+			console.log(`${a} plus ${b} is ${window.miniadd.add(a, b)}.`);
+		</script>
+	</body>
+</html>
